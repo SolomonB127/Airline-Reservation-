@@ -190,14 +190,21 @@ public class Signup extends JFrame implements ActionListener  {
                     txt4.getText().length() >=3 &&  txt5.getText().length() >=3){
                 loadSql();
                 try{
-                    System.out.println("Insert into signup values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
+                    System.out.println("Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
                             txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')"
                     ) ;
-                    String query =  "Insert into signup values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
+                    String query =  "Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
                             txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')";
-                    st.execute(query);
+                    if (st.execute(query)){
+                        JOptionPane.showMessageDialog(null, "An error occurred. Please try again.");
+                    }else {
+                        JOptionPane.showMessageDialog(null, "Successfully inserted values");
+                        dispose();
+                        new Login();
+                    }
+
                     System.out.println();
-                    JOptionPane.showMessageDialog(null, "Successfully inserted values");
+
                 } catch (SQLException ex){
                     ex.printStackTrace();
                 }

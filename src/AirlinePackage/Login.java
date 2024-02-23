@@ -48,7 +48,7 @@ public class Login  extends JFrame{
         txt2 = new JPasswordField(50);
         txt2.setFont(fnt);
         txt2.setBounds(200, 450, 150, 20);
-        showPsw = new JCheckBox("Show Password");
+        showPsw = new JCheckBox("Show Password"); //show password
         showPsw.setBounds(200, 530, 150, 20);
         showPsw.addActionListener(new ActionListener() {
             @Override
