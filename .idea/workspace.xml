@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Airline Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +27,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "onboarding.tips.debug.path": "C:/Users/cex/Desktop/TRIALS/PERSONAL/Airline Reservation/Airline Project/src/Main.java"
   }
@@ -107,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708688067669</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added an sql-java-connector file, inorder to make form connection to SQL server a success">
+      <option name="closed" value="true" />
+      <created>1708691027767</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708691027767</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -119,6 +124,7 @@
     <MESSAGE value="Added text-fields for user's to pass in personal information" />
     <MESSAGE value="Added a show password functionality using a checkbox" />
     <MESSAGE value="Added exit button functionality which closes the frame when clicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added exit button functionality which closes the frame when clicked" />
+    <MESSAGE value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
   </component>
 </project>

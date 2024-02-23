@@ -165,6 +165,7 @@ public class Signup extends JFrame implements ActionListener  {
         new Signup(); //method call
     }
 
+//    SQL Server connection
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Button clicked");
@@ -200,11 +201,28 @@ public class Signup extends JFrame implements ActionListener  {
             conn = DriverManager.getConnection("jdbc:mysql://localhost: 3306" + "/AirlineApp", "root", "");
             st = conn.createStatement();
 
-//            Retrieve_values();
+           Retrieve_values();
 
         }catch (SQLException sqlerr){
 
         }
     }
 
+//    Data Retrieval
+public void Retrieve_values(){
+    String select = "Select * from signup";
+    ResultSet rs;
+    try {
+        rs = st.executeQuery(select);
+        while (rs.next()){
+            System.out.println(rs.getString(1));
+            System.out.println(rs.getString(2));
+            System.out.println(rs.getString(3));
+            System.out.println(rs.getString(4));
+            System.out.println(rs.getString(5));
+        }
+    }catch (SQLException e){
+        e.printStackTrace();
+    }
+}
 }
