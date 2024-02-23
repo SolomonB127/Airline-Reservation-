@@ -48,6 +48,18 @@ public class Login  extends JFrame{
         txt2 = new JPasswordField(50);
         txt2.setFont(fnt);
         txt2.setBounds(200, 450, 150, 20);
+        showPsw = new JCheckBox("Show Password");
+        showPsw.setBounds(200, 530, 150, 20);
+        showPsw.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (showPsw.isSelected()){
+                    txt2.setEchoChar((char) 0);
+                } else {
+                    txt2.setEchoChar('*');
+                }
+            }
+        });
 
 //        Labels for user info
         Font font = new Font("Sans-serif", Font.BOLD, 14);
@@ -68,6 +80,7 @@ public class Login  extends JFrame{
         label2.setLocation(100, 450);
         add(label2);
         add(txt2);
+        add(showPsw);
         
 //     login button   
         loginbtn = new JButton("Log-in");
