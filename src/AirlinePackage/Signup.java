@@ -223,7 +223,7 @@ public class Signup extends JFrame implements ActionListener  {
 
 //    Data Retrieval
 public void Retrieve_values(){
-    String select = "Select * from signup";
+    String select = "Select * from users";
     ResultSet rs;
     try {
         rs = st.executeQuery(select);

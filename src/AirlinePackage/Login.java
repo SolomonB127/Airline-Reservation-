@@ -36,6 +36,25 @@ public class Login  extends JFrame{
         add(imgLabel);
 
         Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+
+//        Labels for user info
+        Font font = new Font("Sans-serif", Font.BOLD, 14);
+
+        JLabel label2 = new JLabel("Email: "); // Adding label to panel
+        label2.setFont(font);
+        label2.setHorizontalAlignment(JLabel.CENTER);
+        label2.setSize(100, 20);
+        label2.setLocation(100, 350);
+        add(label2);
+
+
+        JLabel label4 = new JLabel("Password: "); // Adding label to panel
+        label4.setFont(font);
+        label4.setHorizontalAlignment(JLabel.CENTER);
+        label4.setSize(100, 20);
+        label4.setLocation(100, 450);
+        add(label4);
+
         
 //     login button   
         loginbtn = new JButton("Log-in");
