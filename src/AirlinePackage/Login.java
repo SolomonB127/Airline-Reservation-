@@ -25,6 +25,16 @@ public class Login  extends JFrame{
             e.printStackTrace();
         }
 
+        //        Project Logo
+        ImageIcon img = new ImageIcon("src/AirlinePackage/Logo1.png");
+        JLabel imgLabel = new JLabel();
+        imgLabel.setSize(300, 300);
+        imgLabel.setLocation(100, 100);
+        imgLabel.setHorizontalAlignment(JLabel.CENTER);
+        imgLabel.setVerticalAlignment(JLabel.TOP);
+        imgLabel.setIcon(img);
+        add(imgLabel);
+
         Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
         
 //     login button   
