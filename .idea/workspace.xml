@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708691623799</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactored the data Retrieval code format">
+      <option name="closed" value="true" />
+      <created>1708692821580</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708692821580</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +149,7 @@
     <MESSAGE value="Added exit button functionality which closes the frame when clicked" />
     <MESSAGE value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
     <MESSAGE value="Added a data retrieval code, which returns data in my SQL database back to the console" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a data retrieval code, which returns data in my SQL database back to the console" />
+    <MESSAGE value="Refactored the data Retrieval code format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the data Retrieval code format" />
   </component>
 </project>

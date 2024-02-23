@@ -4,6 +4,8 @@ package AirlinePackage;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -11,6 +13,7 @@ import java.sql.*;
 
 public class Signup extends JFrame implements ActionListener  {
     JButton signupbtn;
+    JLabel label6;
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
     JPasswordField txt5;
     JCheckBox showPsw;
@@ -115,11 +118,12 @@ public class Signup extends JFrame implements ActionListener  {
         add(txt5);
         add(showPsw);
 
-        JLabel label6 = new JLabel("Don't have an account? Log in "); // Adding label to panel
+        label6 = new JLabel("Don't have an account? Log in "); // Adding label to panel
         label6.setFont(font);
         label6.setHorizontalAlignment(JLabel.CENTER);
         label6.setSize(400, 20);
         label6.setLocation(50, 650);
+
 
 //     Sigun-up button
        signupbtn = new JButton("Signup");
@@ -130,6 +134,13 @@ public class Signup extends JFrame implements ActionListener  {
         signupbtn.setForeground(Color.WHITE);
         add(signupbtn);
         signupbtn.addActionListener(this);
+        label6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dispose();
+                new Login();
+            }
+        });
         add(label6);// label6
 
 
@@ -164,6 +175,8 @@ public class Signup extends JFrame implements ActionListener  {
     public static void main(String[] args) {
         new Signup(); //method call
     }
+
+
 
 //    SQL Server connection
     @Override
