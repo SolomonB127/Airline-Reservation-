@@ -10,6 +10,10 @@ import java.awt.*;
 import java.sql.*;
 
 public class Login  extends JFrame{
+//    global variables declaration
+    JButton loginbtn;
+    
+//    login constructor method
     public Login(){
         //        Production of frame
         setUndecorated(true);
@@ -20,6 +24,17 @@ public class Login  extends JFrame{
         } catch (IOException e){
             e.printStackTrace();
         }
+
+        Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+        
+//     login button   
+        loginbtn = new JButton("Log-in");
+        loginbtn.setSize(300,30);
+        loginbtn.setLocation(100,600);
+        loginbtn.setFont(fnt);
+        loginbtn.setBackground(Color.BLUE);
+        loginbtn.setForeground(Color.WHITE);
+        add(loginbtn);
 
         //        Exit button
         JButton closeBtn = new JButton("Exit");
