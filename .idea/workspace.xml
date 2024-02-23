@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708691027767</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added a data retrieval code, which returns data in my SQL database back to the console">
+      <option name="closed" value="true" />
+      <created>1708691623799</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708691623799</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,6 +134,7 @@
     <MESSAGE value="Added a show password functionality using a checkbox" />
     <MESSAGE value="Added exit button functionality which closes the frame when clicked" />
     <MESSAGE value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
+    <MESSAGE value="Added a data retrieval code, which returns data in my SQL database back to the console" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a data retrieval code, which returns data in my SQL database back to the console" />
   </component>
 </project>

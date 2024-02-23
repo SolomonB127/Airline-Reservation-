@@ -215,11 +215,11 @@ public void Retrieve_values(){
     try {
         rs = st.executeQuery(select);
         while (rs.next()){
-            System.out.println(rs.getString(1));
-            System.out.println(rs.getString(2));
-            System.out.println(rs.getString(3));
-            System.out.println(rs.getString(4));
-            System.out.println(rs.getString(5));
+            System.out.println("Firstname: " + rs.getString(1));
+            System.out.println("Lastname: " + rs.getString(2));
+            System.out.println("Email: " + rs.getString(3));
+            System.out.println("PhoneNo: " + rs.getString(4));
+            System.out.println("Password: " + rs.getString(5));
         }
     }catch (SQLException e){
         e.printStackTrace();
