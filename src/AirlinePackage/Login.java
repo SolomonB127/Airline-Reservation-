@@ -21,6 +21,24 @@ public class Login  extends JFrame{
             e.printStackTrace();
         }
 
+        //        Exit button
+        JButton closeBtn = new JButton("Exit");
+        closeBtn.setSize(80, 30);
+        closeBtn.setLocation(400, 70);
+        Font clfnt = new Font("Comic Sans MS", Font.BOLD, 13);
+        closeBtn.setFont(clfnt);
+        closeBtn.setBackground(Color.BLUE);
+        closeBtn.setForeground(Color.WHITE);
+        closeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        this.add(closeBtn);
+        this.setDefaultCloseOperation(3);
+
+
         //        Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
         imglabel.setSize(500,800);
