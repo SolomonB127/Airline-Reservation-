@@ -11,6 +11,7 @@ import java.awt.*;
 public class Signup extends JFrame {
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
     JPasswordField txt5;
+    JCheckBox showPsw;
 
 //    signup constructor method
     public Signup(){
@@ -55,6 +56,18 @@ public class Signup extends JFrame {
         txt5 = new JPasswordField(50);
         txt5.setFont(fnt);
         txt5.setBounds(200, 500, 150, 20);
+        showPsw = new JCheckBox("Show Password");
+        showPsw.setBounds(200, 530, 150, 20);
+        showPsw.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (showPsw.isSelected()){
+                    txt5.setEchoChar((char) 0);
+                } else {
+                    txt5.setEchoChar('*');
+                }
+            }
+        });
 
         JLabel label1 = new JLabel("FirstName: "); // Adding label to panel
         Font font = new Font("Sans-serif", Font.BOLD, 14);
@@ -96,6 +109,7 @@ public class Signup extends JFrame {
         label5.setLocation(100, 500);
         add(label5);
         add(txt5);
+        add(showPsw);
 
 //     Sigun-up button
         JButton signupbtn = new JButton("Signup");
