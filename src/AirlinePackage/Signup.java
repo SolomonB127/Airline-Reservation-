@@ -41,7 +41,7 @@ public class Signup extends JFrame implements ActionListener  {
         imgLabel.setIcon(img);
         add(imgLabel);
 
-        Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+        Font fnt = new Font("Garamond", Font.BOLD, 12);
 
         txt1 = new JTextField(50);
         txt1.setFont(fnt);
@@ -129,7 +129,8 @@ public class Signup extends JFrame implements ActionListener  {
        signupbtn = new JButton("Signup");
         signupbtn.setSize(300,30);
         signupbtn.setLocation(100,600);
-        signupbtn.setFont(fnt);
+        Font signfnt = new Font("Comic Sans MS", Font.BOLD, 20);
+        signupbtn.setFont(signfnt);
         signupbtn.setBackground(Color.BLUE);
         signupbtn.setForeground(Color.WHITE);
         add(signupbtn);

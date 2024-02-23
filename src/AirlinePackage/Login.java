@@ -12,6 +12,9 @@ import java.sql.*;
 public class Login  extends JFrame{
 //    global variables declaration
     JButton loginbtn;
+    JTextField txt1;
+    JPasswordField txt2;
+    JCheckBox showPsw;
     
 //    login constructor method
     public Login(){
@@ -35,32 +38,43 @@ public class Login  extends JFrame{
         imgLabel.setIcon(img);
         add(imgLabel);
 
-        Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+        Font fnt = new Font("Garamond", Font.BOLD, 12);
+
+//        textFields
+        txt1 = new JTextField(50);
+        txt1.setFont(fnt);
+        txt1.setBounds(200, 350, 150, 20);
+
+        txt2 = new JPasswordField(50);
+        txt2.setFont(fnt);
+        txt2.setBounds(200, 450, 150, 20);
 
 //        Labels for user info
         Font font = new Font("Sans-serif", Font.BOLD, 14);
 
-        JLabel label2 = new JLabel("Email: "); // Adding label to panel
+        JLabel label1 = new JLabel("Email: "); // Adding label to panel
+        label1.setFont(font);
+        label1.setHorizontalAlignment(JLabel.CENTER);
+        label1.setSize(100, 20);
+        label1.setLocation(100, 350);
+        add(label1);
+        add(txt1);
+
+
+        JLabel label2 = new JLabel("Password: "); // Adding label to panel
         label2.setFont(font);
         label2.setHorizontalAlignment(JLabel.CENTER);
         label2.setSize(100, 20);
-        label2.setLocation(100, 350);
+        label2.setLocation(100, 450);
         add(label2);
-
-
-        JLabel label4 = new JLabel("Password: "); // Adding label to panel
-        label4.setFont(font);
-        label4.setHorizontalAlignment(JLabel.CENTER);
-        label4.setSize(100, 20);
-        label4.setLocation(100, 450);
-        add(label4);
-
+        add(txt2);
         
 //     login button   
         loginbtn = new JButton("Log-in");
         loginbtn.setSize(300,30);
         loginbtn.setLocation(100,600);
-        loginbtn.setFont(fnt);
+        Font logfnt = new Font("Comic Sans MS", Font.BOLD, 20);
+        loginbtn.setFont(logfnt);
         loginbtn.setBackground(Color.BLUE);
         loginbtn.setForeground(Color.WHITE);
         add(loginbtn);

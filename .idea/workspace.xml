@@ -185,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708695921500</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added labels for Email and Password in Login frame">
+      <option name="closed" value="true" />
+      <created>1708708783651</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708708783651</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,6 +214,7 @@
     <MESSAGE value="Created" />
     <MESSAGE value="Created and added a login button to the frame" />
     <MESSAGE value="Added project logo to Login page/frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added project logo to Login page/frame" />
+    <MESSAGE value="Added labels for Email and Password in Login frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added labels for Email and Password in Login frame" />
   </component>
 </project>
