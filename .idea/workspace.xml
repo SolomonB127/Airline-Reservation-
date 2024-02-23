@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Airline Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flight Reservation.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline Reserve/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline Reserve/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline Reserve/src/AirLinereserve/signup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Signup/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Signup/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Signup/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Signup/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Signup/Signup.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +39,19 @@
       <option name="presentableId" value="Default" />
       <updated>1708682789909</updated>
     </task>
+    <task id="LOCAL-00001" summary="Created main Jframe">
+      <option name="closed" value="true" />
+      <created>1708685009300</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685009300</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created main Jframe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created main Jframe" />
   </component>
 </project>
