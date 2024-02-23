@@ -7,11 +7,15 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
+import java.sql.*;
 
-public class Signup extends JFrame  {
+public class Signup extends JFrame implements ActionListener  {
+    JButton signupbtn;
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
     JPasswordField txt5;
     JCheckBox showPsw;
+    Connection conn;
+    Statement st;
 
 //    signup constructor method
     public Signup(){
@@ -118,13 +122,14 @@ public class Signup extends JFrame  {
         label6.setLocation(50, 650);
 
 //     Sigun-up button
-        JButton signupbtn = new JButton("Signup");
+       signupbtn = new JButton("Signup");
         signupbtn.setSize(300,30);
         signupbtn.setLocation(100,600);
         signupbtn.setFont(fnt);
         signupbtn.setBackground(Color.BLUE);
         signupbtn.setForeground(Color.WHITE);
         add(signupbtn);
+        signupbtn.addActionListener(this);
         add(label6);// label6
 
 
@@ -156,9 +161,50 @@ public class Signup extends JFrame  {
         setVisible(true);
     }
 
-
-
     public static void main(String[] args) {
         new Signup(); //method call
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Button clicked");
+        if (!txt1.getText().isEmpty() && !txt2.getText().isEmpty() && !txt3.getText().isEmpty() &&
+                !txt4.getText().isEmpty() && !txt5.getText().isEmpty()){
+            System.out.println("All fields are filled");
+            if (txt1.getText().length() >= 3 && txt2.getText().length() >=3 &&  txt3.getText().length() >=3 &&
+                    txt4.getText().length() >=3 &&  txt5.getText().length() >=3){
+                loadSql();
+                try{
+                    System.out.println("Insert into signup values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
+                            txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')"
+                    ) ;
+                    String query =  "Insert into signup values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
+                            txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')";
+                    st.execute(query);
+                    System.out.println();
+                    JOptionPane.showMessageDialog(null, "Successfully inserted values");
+                } catch (SQLException ex){
+                    ex.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void loadSql() {
+        try {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }catch (ClassNotFoundException e){
+                System.err.println("Error finding class");
+            }
+            conn = DriverManager.getConnection("jdbc:mysql://localhost: 3306" + "/AirlineApp", "root", "");
+            st = conn.createStatement();
+
+//            Retrieve_values();
+
+        }catch (SQLException sqlerr){
+
+        }
+    }
+
 }
