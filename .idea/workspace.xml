@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="" />
+    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,12 +57,30 @@
       <option name="project" value="LOCAL" />
       <updated>1708685331063</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added an exit button(which when clicked close the frame) to the frame">
+      <option name="closed" value="true" />
+      <created>1708685665126</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685665126</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added an signup button to the frame">
+      <option name="closed" value="true" />
+      <created>1708685902356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685902356</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created main Jframe" />
     <MESSAGE value="Added logo to Jframe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logo to Jframe" />
+    <MESSAGE value="Added an exit button(which when clicked close the frame) to the frame" />
+    <MESSAGE value="Added an signup button to the frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an signup button to the frame" />
   </component>
 </project>

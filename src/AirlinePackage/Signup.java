@@ -10,6 +10,7 @@ import java.awt.*;
 
 public class Signup extends JFrame {
 
+
 //    signup constructor method
     public Signup(){
 //        Production of frame
@@ -32,6 +33,42 @@ public class Signup extends JFrame {
         add(imgLabel);
 
         Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+
+        JLabel label1 = new JLabel("FirstName: "); // Adding label to panel
+        Font font = new Font("Sans-serif", Font.BOLD, 14);
+        label1.setFont(font);
+        label1.setHorizontalAlignment(JLabel.CENTER);
+        label1.setSize(100, 20);
+        label1.setLocation(100, 300);
+        add(label1);
+
+        JLabel label2 = new JLabel("LastName: "); // Adding label to panel
+        label2.setFont(font);
+        label2.setHorizontalAlignment(JLabel.CENTER);
+        label2.setSize(100, 20);
+        label2.setLocation(100, 350);
+        add(label2);
+
+        JLabel label3 = new JLabel("Email: "); // Adding label to panel
+        label3.setFont(font);
+        label3.setHorizontalAlignment(JLabel.CENTER);
+        label3.setSize(100, 20);
+        label3.setLocation(100, 400);
+        add(label3);
+
+        JLabel label4 = new JLabel("Phone: "); // Adding label to panel
+        label4.setFont(font);
+        label4.setHorizontalAlignment(JLabel.CENTER);
+        label4.setSize(100, 20);
+        label4.setLocation(100, 450);
+        add(label4);
+
+        JLabel label5 = new JLabel("Password: "); // Adding label to panel
+        label5.setFont(font);
+        label5.setHorizontalAlignment(JLabel.CENTER);
+        label5.setSize(100, 20);
+        label5.setLocation(100, 500);
+        add(label5);
 
 //     Sigun-up button
         JButton signupbtn = new JButton("Signup");
