@@ -8,7 +8,7 @@ import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
 
-public class Signup extends JFrame {
+public class Signup extends JFrame  {
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
     JPasswordField txt5;
     JCheckBox showPsw;
@@ -111,6 +111,12 @@ public class Signup extends JFrame {
         add(txt5);
         add(showPsw);
 
+        JLabel label6 = new JLabel("Don't have an account? Log in "); // Adding label to panel
+        label6.setFont(font);
+        label6.setHorizontalAlignment(JLabel.CENTER);
+        label6.setSize(400, 20);
+        label6.setLocation(50, 650);
+
 //     Sigun-up button
         JButton signupbtn = new JButton("Signup");
         signupbtn.setSize(300,30);
@@ -119,6 +125,7 @@ public class Signup extends JFrame {
         signupbtn.setBackground(Color.BLUE);
         signupbtn.setForeground(Color.WHITE);
         add(signupbtn);
+        add(label6);// label6
 
 
 //        Exit button
@@ -129,7 +136,14 @@ public class Signup extends JFrame {
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
         closeBtn.setForeground(Color.WHITE);
-        add(closeBtn);
+        closeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        this.add(closeBtn);
+        this.setDefaultCloseOperation(3);
 
 //        Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
