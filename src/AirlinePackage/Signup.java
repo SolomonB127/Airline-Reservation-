@@ -31,6 +31,18 @@ public class Signup extends JFrame {
         imgLabel.setIcon(img);
         add(imgLabel);
 
+        Font fnt = new Font("Comic Sans MS", Font.BOLD, 20);
+
+//     Sigun-up button
+        JButton signupbtn = new JButton("Signup");
+        signupbtn.setSize(300,30);
+        signupbtn.setLocation(100,600);
+        signupbtn.setFont(fnt);
+        signupbtn.setBackground(Color.BLUE);
+        signupbtn.setForeground(Color.WHITE);
+        add(signupbtn);
+
+
 //        Exit button
         JButton closeBtn = new JButton("Exit");
         closeBtn.setSize(80, 30);
