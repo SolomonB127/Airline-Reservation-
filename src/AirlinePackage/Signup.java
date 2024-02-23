@@ -118,7 +118,7 @@ public class Signup extends JFrame implements ActionListener  {
         add(txt5);
         add(showPsw);
 
-        label6 = new JLabel("Don't have an account? Log in "); // Adding label to panel
+        label6 = new JLabel("Already have an account? Log in "); // Adding label to panel
         label6.setFont(font);
         label6.setHorizontalAlignment(JLabel.CENTER);
         label6.setSize(400, 20);
