@@ -180,70 +180,62 @@ public class Signup extends JFrame implements ActionListener  {
 
 
 //    SQL Server connection
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked");
-        if (!txt1.getText().isEmpty() && !txt2.getText().isEmpty() && !txt3.getText().isEmpty() &&
-                !txt4.getText().isEmpty() && !txt5.getText().isEmpty()){
-            System.out.println("All fields are filled");
-            if (txt1.getText().length() >= 3 && txt2.getText().length() >=3 &&  txt3.getText().length() >=3 &&
-                    txt4.getText().length() >=3 &&  txt5.getText().length() >=3){
-                loadSql();
-                try{
-                    System.out.println("Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
-                            txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')"
-                    ) ;
-                    String query =  "Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
-                            txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')";
-                    if (st.execute(query)){
-                        JOptionPane.showMessageDialog(null, "An error occurred. Please try again.");
-                    }else {
-                        JOptionPane.showMessageDialog(null, "Successfully inserted values");
-                        dispose();
-                        new Login();
-                    }
-
-                    System.out.println();
-
-                } catch (SQLException ex){
-                    ex.printStackTrace();
+@Override
+public void actionPerformed(ActionEvent e) {
+    System.out.println("Button clicked");
+    if (!txt1.getText().isEmpty() && !txt2.getText().isEmpty() && !txt3.getText().isEmpty() &&
+            !txt4.getText().isEmpty() && !txt5.getText().isEmpty()){
+        System.out.println("All fields are filled");
+        if (txt1.getText().length() >= 3 && txt2.getText().length() >=3 &&  txt3.getText().length() >=3 &&
+                txt4.getText().length() >=3 &&  txt5.getText().length() >=3){
+            loadSql();
+            try{
+                String query =  "Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
+                        txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')";
+                if (st.execute(query)){
+                    JOptionPane.showMessageDialog(null, "An error occurred. Please try again.");
+                }else {
+                    JOptionPane.showMessageDialog(null, "Successfully inserted values");
+                    dispose();
+                    new Login();
                 }
+
+            } catch (SQLException ex){
+                ex.printStackTrace();
             }
         }
     }
+}
 
     private void loadSql() {
         try {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            }catch (ClassNotFoundException e){
-                System.err.println("Error finding class");
-            }
-            conn = DriverManager.getConnection("jdbc:mysql://localhost: 3306" + "/AirlineApp", "root", "");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost: 3306/AirlineApp", "root", "");
             st = conn.createStatement();
-
-           Retrieve_values();
-
-        }catch (SQLException sqlerr){
-
+            Retrieve_values();
+        }catch (ClassNotFoundException e){
+            System.err.println("Error finding class");
+            e.printStackTrace();
+        } catch (SQLException sqlerr){
+            sqlerr.printStackTrace();
         }
     }
 
-//    Data Retrieval
-public void Retrieve_values(){
-    String select = "Select * from users";
-    ResultSet rs;
-    try {
-        rs = st.executeQuery(select);
-        while (rs.next()){
-            System.out.println("Firstname: " + rs.getString(1));
-            System.out.println("Lastname: " + rs.getString(2));
-            System.out.println("Email: " + rs.getString(3));
-            System.out.println("PhoneNo: " + rs.getString(4));
-            System.out.println("Password: " + rs.getString(5));
+    // Data Retrieval
+    public void Retrieve_values(){
+        String select = "Select * from users";
+        try {
+            ResultSet rs = st.executeQuery(select);
+            while (rs.next()){
+                System.out.println("Firstname: " + rs.getString(1));
+                System.out.println("Lastname: " + rs.getString(2));
+                System.out.println("Email: " + rs.getString(3));
+                System.out.println("PhoneNo: " + rs.getString(4));
+                System.out.println("Password: " + rs.getString(5));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
         }
-    }catch (SQLException e){
-        e.printStackTrace();
     }
-}
+
 }

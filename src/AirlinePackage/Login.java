@@ -92,7 +92,7 @@ public class Login  extends JFrame{
         loginbtn.setForeground(Color.WHITE);
         add(loginbtn);
 
-        //        Exit button
+//        Exit button
         JButton closeBtn = new JButton("Exit");
         closeBtn.setSize(80, 30);
         closeBtn.setLocation(400, 70);
