@@ -13,9 +13,9 @@ import java.sql.*;
 
 public class Signup extends JFrame implements ActionListener  {
     JButton signupbtn;
-    JLabel label6;
-    JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
-    JPasswordField txt5;
+    JLabel label7;
+    JTextField txt1,txt2,txt3,txt4,txt5; // global text-field variable declaration
+    JPasswordField txt6;
     JCheckBox showPsw;
     Connection conn;
     Statement st;
@@ -54,24 +54,28 @@ public class Signup extends JFrame implements ActionListener  {
 
         txt3 = new JTextField(50);
         txt3.setFont(fnt);
-        txt3.setBounds(200, 400, 150, 20);
+        txt3.setBounds(200, 450, 150, 20);
 
         txt4 = new JTextField(50);
         txt4.setFont(fnt);
-        txt4.setBounds(200, 450, 150, 20);
+        txt4.setBounds(200, 500, 150, 20);
 
-        txt5 = new JPasswordField(50);
+        txt5 = new JTextField(50);
         txt5.setFont(fnt);
-        txt5.setBounds(200, 500, 150, 20);
+        txt5.setBounds(200, 400, 150, 20);
+
+        txt6 = new JPasswordField(50);
+        txt6.setFont(fnt);
+        txt6.setBounds(200, 550, 150, 20);
         showPsw = new JCheckBox("Show Password");
-        showPsw.setBounds(200, 530, 150, 20);
+        showPsw.setBounds(200, 575, 150, 20);
         showPsw.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (showPsw.isSelected()){
-                    txt5.setEchoChar((char) 0);
+                    txt6.setEchoChar((char) 0);
                 } else {
-                    txt5.setEchoChar('*');
+                    txt6.setEchoChar('*');
                 }
             }
         });
@@ -93,7 +97,7 @@ public class Signup extends JFrame implements ActionListener  {
         add(label2);
         add(txt2);
 
-        JLabel label3 = new JLabel("Email: "); // Adding label to panel
+        JLabel label3 = new JLabel("Username: "); // Adding label to panel
         label3.setFont(font);
         label3.setHorizontalAlignment(JLabel.CENTER);
         label3.setSize(100, 20);
@@ -101,7 +105,8 @@ public class Signup extends JFrame implements ActionListener  {
         add(label3);
         add(txt3);
 
-        JLabel label4 = new JLabel("Phone: "); // Adding label to panel
+
+        JLabel label4 = new JLabel("Email: "); // Adding label to panel
         label4.setFont(font);
         label4.setHorizontalAlignment(JLabel.CENTER);
         label4.setSize(100, 20);
@@ -109,26 +114,34 @@ public class Signup extends JFrame implements ActionListener  {
         add(label4);
         add(txt4);
 
-        JLabel label5 = new JLabel("Password: "); // Adding label to panel
+        JLabel label5 = new JLabel("Phone: "); // Adding label to panel
         label5.setFont(font);
         label5.setHorizontalAlignment(JLabel.CENTER);
         label5.setSize(100, 20);
         label5.setLocation(100, 500);
         add(label5);
         add(txt5);
-        add(showPsw);
 
-        label6 = new JLabel("Already have an account? Log in "); // Adding label to panel
+        JLabel label6 = new JLabel("Password: "); // Adding label to panel
         label6.setFont(font);
         label6.setHorizontalAlignment(JLabel.CENTER);
-        label6.setSize(400, 20);
-        label6.setLocation(50, 650);
+        label6.setSize(100, 20);
+        label6.setLocation(100, 550);
+        add(label6);
+        add(txt6);
+        add(showPsw);
+
+        label7 = new JLabel("Already have an account? Log in "); // Adding label to panel
+        label7.setFont(font);
+        label7.setHorizontalAlignment(JLabel.CENTER);
+        label7.setSize(400, 20);
+        label7.setLocation(50, 650);
 
 
 //     Sigun-up button
        signupbtn = new JButton("Signup");
         signupbtn.setSize(300,30);
-        signupbtn.setLocation(100,600);
+        signupbtn.setLocation(100,610);
         Font signfnt = new Font("Comic Sans MS", Font.BOLD, 20);
         signupbtn.setFont(signfnt);
         signupbtn.setBackground(Color.BLUE);
@@ -142,7 +155,7 @@ public class Signup extends JFrame implements ActionListener  {
                 new Login();
             }
         });
-        add(label6);// label6
+        add(label7);// label7
 
 
 //        Exit button

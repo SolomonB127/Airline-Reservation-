@@ -217,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708714293688</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Refactored code in Signup and Login frame">
+      <option name="closed" value="true" />
+      <created>1708778080275</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778080275</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -242,6 +250,7 @@
     <MESSAGE value="Added corresponding text-fields to labels in Login frame" />
     <MESSAGE value="Added a show password functionality in Login frame" />
     <MESSAGE value="Refactored code that inputs values in SQL server in Signup frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored code that inputs values in SQL server in Signup frame" />
+    <MESSAGE value="Refactored code in Signup and Login frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored code in Signup and Login frame" />
   </component>
 </project>
