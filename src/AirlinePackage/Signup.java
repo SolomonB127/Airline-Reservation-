@@ -148,7 +148,7 @@ public class Signup extends JFrame implements ActionListener  {
         signupbtn.setForeground(Color.WHITE);
         add(signupbtn);
         signupbtn.addActionListener(this);
-        label6.addMouseListener(new MouseAdapter() {
+        label7.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 dispose();
@@ -200,11 +200,11 @@ public void actionPerformed(ActionEvent e) {
             !txt4.getText().isEmpty() && !txt5.getText().isEmpty()){
         System.out.println("All fields are filled");
         if (txt1.getText().length() >= 3 && txt2.getText().length() >=3 &&  txt3.getText().length() >=3 &&
-                txt4.getText().length() >=3 &&  txt5.getText().length() >=3){
+                txt4.getText().length() >=3 &&  txt5.getText().length() >=3 &&  txt6.getText().length() >=3){
             loadSql();
             try{
-                String query =  "Insert into users values (' " + txt1.getText() + " ' ,  ' " +  txt2.getText() + " ' ,  ' " +
-                        txt3.getText() + " ' ,  ' "  + txt4.getText() + " ' ,  ' " + txt5.getText() + "')";
+                String query =  "Insert into users values ('" + txt1.getText() + "', '" +  txt2.getText() + "', '" +
+                        txt3.getText() + "', '"  + txt4.getText() + "', '" + txt5.getText() + "', '"+ txt6.getText() + "')";
                 if (st.execute(query)){
                     JOptionPane.showMessageDialog(null, "An error occurred. Please try again.");
                 }else {
@@ -242,9 +242,10 @@ public void actionPerformed(ActionEvent e) {
             while (rs.next()){
                 System.out.println("Firstname: " + rs.getString(1));
                 System.out.println("Lastname: " + rs.getString(2));
-                System.out.println("Email: " + rs.getString(3));
-                System.out.println("PhoneNo: " + rs.getString(4));
-                System.out.println("Password: " + rs.getString(5));
+                System.out.println("Username: " + rs.getString(3));
+                System.out.println("Email: " + rs.getString(4));
+                System.out.println("PhoneNo: " + rs.getString(5));
+                System.out.println("Password: " + rs.getString(6));
             }
         }catch (SQLException e){
             e.printStackTrace();

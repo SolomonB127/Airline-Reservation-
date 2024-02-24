@@ -15,6 +15,8 @@ public class Login  extends JFrame{
     JTextField txt1;
     JPasswordField txt2;
     JCheckBox showPsw;
+    Connection conn;
+    Statement st;
     
 //    login constructor method
     public Login(){
@@ -64,7 +66,7 @@ public class Login  extends JFrame{
 //        Labels for user info
         Font font = new Font("Sans-serif", Font.BOLD, 14);
 
-        JLabel label1 = new JLabel("Email: "); // Adding label to panel
+        JLabel label1 = new JLabel("Username: "); // Adding label to panel
         label1.setFont(font);
         label1.setHorizontalAlignment(JLabel.CENTER);
         label1.setSize(100, 20);
@@ -90,6 +92,40 @@ public class Login  extends JFrame{
         loginbtn.setFont(logfnt);
         loginbtn.setBackground(Color.BLUE);
         loginbtn.setForeground(Color.WHITE);
+        loginbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == loginbtn) {
+                    String Username = txt1.getText();
+                    String Password = txt2.getText();
+
+                    try {
+                        // Establish database connection securely
+                        conn = DriverManager.getConnection("jdbc:mysql://localhost: 3306/AirlineApp", "root", "");
+                        st = conn.createStatement();
+
+                        // Check login credentials using statement
+                        String query = "SELECT * FROM users WHERE Username = '" + Username + "' AND Password = '" + Password + "'";
+
+                        ResultSet rs = st.executeQuery(query);
+
+                        if (rs.next()) {
+                            // User found
+                            JOptionPane.showMessageDialog(null, "Successfully logged in");
+                        } else {
+                            // User not found
+                            JOptionPane.showMessageDialog(null, "Invalid credentials. Please try again.");
+                        }
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error connecting to database: " + ex.getMessage());
+                    }
+                }
+            }
+        });
+
+
+
         add(loginbtn);
 
 //        Exit button
@@ -120,4 +156,7 @@ public class Login  extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
+
+
 }
