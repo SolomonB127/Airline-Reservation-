@@ -39,8 +39,8 @@ public class Home extends JFrame {
 
         // Display welcome message
         JLabel welcomeLabel = new JLabel("Welcome, " + username + ".");
-        welcomeLabel.setSize(300, 50); // Set appropriate size
-        welcomeLabel.setLocation(100, 250); // Set appropriate location
+        welcomeLabel.setSize(300, 50);
+        welcomeLabel.setLocation(100, 250);
         welcomeLabel.setFont(fnt);
         add(welcomeLabel);
 
@@ -49,9 +49,16 @@ public class Home extends JFrame {
 
         // Flights-Data
         Object[][] data = {
-                {"Airline A", "City B", "10:00", 5},
-                {"Airline C", "City D", "15:00", 0},
-                {"Airline E", "City F", "20:00", 3}
+                {"Qatar Airways", "Brisbane, Vienna, Dhaka", "10:00", 5},
+                {"Singapore Airline", "Melbourne, Manama, Brussels", "15:00", 0},
+                {"Emirates", "Lagos, Abuja, Perth", "20:00", 25},
+                {"ANA All Nippon Airways", "Sydney,Buenos Aires, Kuala Lumpar", "11:09", 1},
+                {"Qantas Airways", "Arizona, Hiroshima, Seoul", "20:00", 10},
+                {"Japan Airlines", "Sao Paulo, Cancun, Durban", "13:00", 0},
+                {"Turkish Airlines", "Pretoria, Johannesburg, Los Cabos", "19:00", 0},
+                {"Air France", "Dire Dawa, Ibadan, Tel Aviv-Yafo", "16:45", 14},
+                {"Korean Air", "Haifa, Bristol, Birmingham", "09:11", 0},
+                {"Swiss Int. Airlines", "Medina, Ashdod, Manitoba", "12:08", 1},
         };
         // Create table
         table = new JTable(new DefaultTableModel(data, columnNames));
@@ -71,7 +78,7 @@ public class Home extends JFrame {
 
         // Add table to frame
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 300, 400, 400); // Set the bounds as per your requirement
+        scrollPane.setBounds(50, 350, 400, 185);
         this.add(scrollPane);
 
 //        Logout button
@@ -90,7 +97,7 @@ public class Home extends JFrame {
             }
         });
         this.add(closeBtn);
-        this.setDefaultCloseOperation(3);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));

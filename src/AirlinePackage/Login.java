@@ -145,7 +145,7 @@ public class Login  extends JFrame{
             }
         });
         this.add(closeBtn);
-        this.setDefaultCloseOperation(3);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
         //        Jlabel for frame
