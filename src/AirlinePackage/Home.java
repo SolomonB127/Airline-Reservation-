@@ -6,14 +6,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.sql.*;
 
 public class Home extends JFrame {
     private JTable table;
+
     public Home(String username) {
         // Production of frame
         setUndecorated(true);
@@ -63,12 +67,16 @@ public class Home extends JFrame {
         // Create table
         table = new JTable(new DefaultTableModel(data, columnNames));
 
+        // Increase width of Destination column
+        TableColumnModel columnModel = table.getColumnModel();
+        columnModel.getColumn(1).setPreferredWidth(200);
+
         // Add mouse listener to handle row clicks
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 int row = table.rowAtPoint(e.getPoint());
                 int col = table.columnAtPoint(e.getPoint());
-                if (col == 3 && (int)table.getValueAt(row, col) > 0) {
+                if (col == 3 && (int) table.getValueAt(row, col) > 0) {
                     // If the user clicked on a row with available seats, navigate to booking page
                     // TODO: Implement navigation to booking page
                     System.out.println("Navigating to booking page for " + table.getValueAt(row, 0));
@@ -81,10 +89,16 @@ public class Home extends JFrame {
         scrollPane.setBounds(50, 350, 400, 185);
         this.add(scrollPane);
 
-//        Logout button
-        JButton closeBtn = new JButton("Logout");
-        closeBtn.setSize(80, 30);
-        closeBtn.setLocation(400, 70);
+        // Instruction label
+        JLabel instructionLabel = new JLabel("Click on the 'Available Seats' column to book a flight.");
+        instructionLabel.setSize(300, 50);
+        instructionLabel.setLocation(100, 300); // Adjust position as needed
+        add(instructionLabel);
+
+        // Logout button
+        JButton closeBtn = new JButton("Logout and Close");
+        closeBtn.setSize(150, 30);
+        closeBtn.setLocation(300, 550); // Move to bottom right
         Font clfnt = new Font("Comic Sans MS", Font.BOLD, 13);
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
@@ -93,12 +107,9 @@ public class Home extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new Login();
             }
         });
-        this.add(closeBtn);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        add(closeBtn);
         // Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
         imglabel.setSize(500,800);
@@ -109,5 +120,4 @@ public class Home extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
 }

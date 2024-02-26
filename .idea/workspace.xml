@@ -288,12 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1708953115311</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="set new Airline names, Destinations and Time in Home frame">
+      <option name="closed" value="true" />
+      <created>1708956414775</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1708956414775</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added text-fields for user's to pass in personal information" />
-    <MESSAGE value="Added a show password functionality using a checkbox" />
     <MESSAGE value="Added exit button functionality which closes the frame when clicked" />
     <MESSAGE value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
     <MESSAGE value="Added a data retrieval code, which returns data in my SQL database back to the console" />
@@ -317,6 +323,8 @@
     <MESSAGE value="Received the Username parameter from the Login page to the Home page, so-as to display a greeting message to logged-in user." />
     <MESSAGE value="Added tables with list of flights available to Home frame" />
     <MESSAGE value="Added logout button to Home frame, which disposes the Home frame and redirects back to Log-in frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logout button to Home frame, which disposes the Home frame and redirects back to Log-in frame" />
+    <MESSAGE value="set new Airline names, Destinations and Time" />
+    <MESSAGE value="set new Airline names, Destinations and Time in Home frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="set new Airline names, Destinations and Time in Home frame" />
   </component>
 </project>
