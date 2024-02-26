@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,11 +271,18 @@
       <option name="project" value="LOCAL" />
       <updated>1708797171107</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added tables with list of flights available to Home frame">
+      <option name="closed" value="true" />
+      <created>1708952580372</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1708952580372</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added an signup button to the frame" />
     <MESSAGE value="Added Jlabels for user's information" />
     <MESSAGE value="Added text-fields for user's to pass in personal information" />
     <MESSAGE value="Added a show password functionality using a checkbox" />
@@ -302,6 +307,7 @@
     <MESSAGE value="Passed in the Username parameter in the if conditional which checks if user has an account in Login frame" />
     <MESSAGE value="Created the frame for Home page" />
     <MESSAGE value="Received the Username parameter from the Login page to the Home page, so-as to display a greeting message to logged-in user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Received the Username parameter from the Login page to the Home page, so-as to display a greeting message to logged-in user." />
+    <MESSAGE value="Added tables with list of flights available to Home frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tables with list of flights available to Home frame" />
   </component>
 </project>

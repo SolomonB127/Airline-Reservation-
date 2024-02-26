@@ -74,7 +74,23 @@ public class Home extends JFrame {
         scrollPane.setBounds(50, 300, 400, 400); // Set the bounds as per your requirement
         this.add(scrollPane);
 
-
+//        Logout button
+        JButton closeBtn = new JButton("Logout");
+        closeBtn.setSize(80, 30);
+        closeBtn.setLocation(400, 70);
+        Font clfnt = new Font("Comic Sans MS", Font.BOLD, 13);
+        closeBtn.setFont(clfnt);
+        closeBtn.setBackground(Color.BLUE);
+        closeBtn.setForeground(Color.WHITE);
+        closeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Login();
+            }
+        });
+        this.add(closeBtn);
+        this.setDefaultCloseOperation(3);
 
         // Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
