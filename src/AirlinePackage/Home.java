@@ -1,25 +1,24 @@
 package AirlinePackage;
 
-// Importation of utilities
+//Importation of utilities
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.io.*;
 import javax.imageio.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
-import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.sql.*;
 
-public class Home extends JFrame {
-    private JTable table;
+public class Home extends JFrame{
+    //    global variables declaration
+    JButton loginbtn;
+    JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
+    Connection conn;
+    Statement st;
 
-    public Home(String username) {
-        // Production of frame
+    //    login constructor method
+    public Home() {
+        //        Production of frame
         setUndecorated(true);
         setLayout(null);
         Image image = null;
@@ -29,9 +28,7 @@ public class Home extends JFrame {
             e.printStackTrace();
         }
 
-        Font fnt = new Font("Garamond", Font.BOLD, 15);
-
-        // Project Logo
+        //        Project Logo
         ImageIcon img = new ImageIcon("src/AirlinePackage/Logo1.png");
         JLabel imgLabel = new JLabel();
         imgLabel.setSize(300, 300);
@@ -41,64 +38,64 @@ public class Home extends JFrame {
         imgLabel.setIcon(img);
         add(imgLabel);
 
-        // Display welcome message
-        JLabel welcomeLabel = new JLabel("Welcome, " + username + ".");
-        welcomeLabel.setSize(300, 50);
-        welcomeLabel.setLocation(100, 250);
-        welcomeLabel.setFont(fnt);
-        add(welcomeLabel);
+        Font fnt = new Font("Garamond", Font.BOLD, 12);
 
-        // Column Names
-        String[] columnNames = {"Airline", "Destination", "Time", "Available Seats"};
+        txt1 = new JTextField(50);
+        txt1.setFont(fnt);
+        txt1.setBounds(280, 303, 150, 20);
 
-        // Flights-Data
-        Object[][] data = {
-                {"Qatar Airways", "Brisbane, Vienna, Dhaka", "10:00", 5},
-                {"Singapore Airline", "Melbourne, Manama, Brussels", "15:00", 0},
-                {"Emirates", "Lagos, Abuja, Perth", "20:00", 25},
-                {"ANA All Nippon Airways", "Sydney,Buenos Aires, Kuala Lumpar", "11:09", 1},
-                {"Qantas Airways", "Arizona, Hiroshima, Seoul", "20:00", 10},
-                {"Japan Airlines", "Sao Paulo, Cancun, Durban", "13:00", 0},
-                {"Turkish Airlines", "Pretoria, Johannesburg, Los Cabos", "19:00", 0},
-                {"Air France", "Dire Dawa, Ibadan, Tel Aviv-Yafo", "16:45", 14},
-                {"Korean Air", "Haifa, Bristol, Birmingham", "09:11", 0},
-                {"Swiss Int. Airlines", "Medina, Ashdod, Manitoba", "12:08", 1},
-        };
-        // Create table
-        table = new JTable(new DefaultTableModel(data, columnNames));
 
-        // Increase width of Destination column
-        TableColumnModel columnModel = table.getColumnModel();
-        columnModel.getColumn(1).setPreferredWidth(200);
+        txt2 = new JTextField(50);
+        txt2.setFont(fnt);
+        txt2.setBounds(280, 350, 150, 20);
 
-        // Add mouse listener to handle row clicks
-        table.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                int row = table.rowAtPoint(e.getPoint());
-                int col = table.columnAtPoint(e.getPoint());
-                if (col == 3 && (int) table.getValueAt(row, col) > 0) {
-                    // If the user clicked on a row with available seats, navigate to booking page
-                    // TODO: Implement navigation to booking page
-                    System.out.println("Navigating to booking page for " + table.getValueAt(row, 0));
-                }
-            }
-        });
+        txt3 = new JTextField(50);
+        txt3.setFont(fnt);
+        txt3.setBounds(280, 403, 150, 20);
 
-        // Add table to frame
-        JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 350, 400, 185);
-        this.add(scrollPane);
+        txt4 = new JTextField(50);
+        txt4.setFont(fnt);
+        txt4.setBounds(280, 450, 150, 20);
 
-        // Instruction label
-        JLabel instructionLabel = new JLabel("Click on the 'Available Seats' column to book a flight.");
-        instructionLabel.setSize(300, 50);
-        instructionLabel.setLocation(100, 300); // Adjust position as needed
-        add(instructionLabel);
 
-        // Logout button
-        JButton closeBtn = new JButton("Logout and Close");
-        closeBtn.setSize(150, 30);
-        closeBtn.setLocation(300, 550); // Move to bottom right
+        JLabel label1 = new JLabel("Departure City: "); // Adding label to panel
+        Font font = new Font("Sans-serif", Font.BOLD, 14);
+        label1.setFont(font);
+        label1.setHorizontalAlignment(JLabel.CENTER);
+        label1.setSize(150, 20);
+        label1.setLocation(49, 300);
+        add(label1);
+        add(txt1);
+
+        JLabel label2 = new JLabel("Destination City: "); // Adding label to panel
+        label2.setFont(font);
+        label2.setHorizontalAlignment(JLabel.CENTER);
+        label2.setSize(150, 20);
+        label2.setLocation(54, 350);
+        add(label2);
+        add(txt2);
+
+        JLabel label3 = new JLabel("Date of Travel(YYYY-MM-DD: "); // Adding label to panel
+        label3.setFont(font);
+        label3.setHorizontalAlignment(JLabel.CENTER);
+        label3.setSize(250, 20);
+        label3.setLocation(47, 400);
+        add(label3);
+        add(txt3);
+
+
+        JLabel label4 = new JLabel("Number of Passengers: "); // Adding label to panel
+        label4.setFont(font);
+        label4.setHorizontalAlignment(JLabel.CENTER);
+        label4.setSize(250, 20);
+        label4.setLocation(28, 450);
+        add(label4);
+        add(txt4);
+
+        //       Log-out button
+        JButton closeBtn = new JButton("Log-out");
+        closeBtn.setSize(80, 30);
+        closeBtn.setLocation(400, 70);
         Font clfnt = new Font("Comic Sans MS", Font.BOLD, 13);
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
@@ -107,17 +104,25 @@ public class Home extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+                new Login();
             }
         });
-        add(closeBtn);
-        // Jlabel for frame
+        this.add(closeBtn);
+
+
+
+        //        Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
         imglabel.setSize(500,800);
         imglabel.setLocation(0, 0);
-        add(imglabel);
 
+        add(imglabel);
         setSize(500,750);
         setLocationRelativeTo(null);
         setVisible(true);
     }
+    public static void main(String[] args){
+        new Home();
+    }
+
 }

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AirlinePackage/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,11 +298,18 @@
       <option name="project" value="LOCAL" />
       <updated>1708956414775</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Changed up UI of Home frame">
+      <option name="closed" value="true" />
+      <created>1708958754011</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708958754011</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added exit button functionality which closes the frame when clicked" />
     <MESSAGE value="Added an sql-java-connector file, inorder to make form connection to SQL server a success" />
     <MESSAGE value="Added a data retrieval code, which returns data in my SQL database back to the console" />
     <MESSAGE value="Refactored the data Retrieval code format" />
@@ -325,6 +334,7 @@
     <MESSAGE value="Added logout button to Home frame, which disposes the Home frame and redirects back to Log-in frame" />
     <MESSAGE value="set new Airline names, Destinations and Time" />
     <MESSAGE value="set new Airline names, Destinations and Time in Home frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="set new Airline names, Destinations and Time in Home frame" />
+    <MESSAGE value="Changed up UI of Home frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed up UI of Home frame" />
   </component>
 </project>
