@@ -13,6 +13,7 @@ public class Home extends JFrame{
     //    global variables declaration
     JButton loginbtn;
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
+    private JButton searchButton;
     Connection conn;
     Statement st;
 
@@ -92,10 +93,21 @@ public class Home extends JFrame{
         add(label4);
         add(txt4);
 
+//        Search button
+        searchButton = new JButton("Search Flights");
+        searchButton.setSize(300, 35);
+        searchButton.setLocation(100, 500);
+        Font sfnt = new Font("Comic Sans MS", Font.BOLD, 13);
+        searchButton.setFont(sfnt);
+        searchButton.setBackground(Color.BLUE);
+        searchButton.setForeground(Color.WHITE);
+//        searchButton.addActionListener((ActionListener) this);
+        add(searchButton);
+
         //       Log-out button
         JButton closeBtn = new JButton("Log-out");
-        closeBtn.setSize(80, 30);
-        closeBtn.setLocation(400, 70);
+        closeBtn.setSize(100, 30);
+        closeBtn.setLocation(370, 70);
         Font clfnt = new Font("Comic Sans MS", Font.BOLD, 13);
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AirlinePackage/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708958754011</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changed up UI of Home frame">
+      <option name="closed" value="true" />
+      <created>1709164165181</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1709164165181</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
