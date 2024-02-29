@@ -9,16 +9,17 @@ import javax.imageio.*;
 import java.awt.*;
 import java.sql.*;
 
-public class Home extends JFrame{
+public class Home extends JFrame implements  ActionListener{
     //    global variables declaration
     JButton loginbtn;
     JTextField txt1,txt2,txt3,txt4; // global text-field variable declaration
     private JButton searchButton;
     Connection conn;
     Statement st;
+    private JTextArea resultArea;
 
     //    login constructor method
-    public Home() {
+    public Home(String username) {
         //        Production of frame
         setUndecorated(true);
         setLayout(null);
@@ -38,6 +39,34 @@ public class Home extends JFrame{
         imgLabel.setVerticalAlignment(JLabel.TOP);
         imgLabel.setIcon(img);
         add(imgLabel);
+
+        // Database connection
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/AirlineApp", "root", "");
+            st = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Database connection failed.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        resultArea = new JTextArea();
+        resultArea.setEditable(false);
+
+//        Welcome msg
+        JLabel welcomeLabel = new JLabel("Welcome, " + username + "!");
+        welcomeLabel.setFont(new Font("Sans-serif", Font.BOLD, 14));
+        welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
+        welcomeLabel.setSize(300, 20);
+        welcomeLabel.setLocation(100, 250);
+        add(welcomeLabel);
+
+        //        motto msg
+        JLabel mottoLabel = new JLabel("Fly with us, soar with confidence....");
+        mottoLabel.setFont(new Font("Sans-serif", Font.ITALIC, 9));
+        mottoLabel.setHorizontalAlignment(JLabel.CENTER);
+        mottoLabel.setSize(300, 20);
+        mottoLabel.setLocation(110, 270);
+        add(mottoLabel);
 
         Font fnt = new Font("Garamond", Font.BOLD, 12);
 
@@ -76,7 +105,7 @@ public class Home extends JFrame{
         add(label2);
         add(txt2);
 
-        JLabel label3 = new JLabel("Date of Travel(YYYY-MM-DD: "); // Adding label to panel
+        JLabel label3 = new JLabel("Date of Travel(YYYY-MM-DD): "); // Adding label to panel
         label3.setFont(font);
         label3.setHorizontalAlignment(JLabel.CENTER);
         label3.setSize(250, 20);
@@ -101,8 +130,16 @@ public class Home extends JFrame{
         searchButton.setFont(sfnt);
         searchButton.setBackground(Color.BLUE);
         searchButton.setForeground(Color.WHITE);
-//        searchButton.addActionListener((ActionListener) this);
+        searchButton.addActionListener((ActionListener) this);
         add(searchButton);
+
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            if (e.getSource() == searchButton) {
+//                searchFlights();
+//            }
+//        }
+
 
         //       Log-out button
         JButton closeBtn = new JButton("Log-out");
@@ -133,8 +170,43 @@ public class Home extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
+
     public static void main(String[] args){
-        new Home();
+        new Home("Mike");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == searchButton) {
+            searchFlights();
+        }
+    }
+
+    private void searchFlights() {
+        String departureCity = txt1.getText();
+        String destinationCity = txt2.getText();
+        String travelDate = txt3.getText();
+        int numPassengers = Integer.parseInt(txt4.getText());
+
+        try {
+            String query = "SELECT * FROM flights WHERE departure_city = '" + departureCity + "' AND destination_city = '" + destinationCity + "' AND travel_date = '" + travelDate + "' AND available_seats >= " + numPassengers;
+            ResultSet resultSet = st.executeQuery(query);
+
+            resultArea.setText("");
+            if (resultSet.next()) {
+                resultArea.append("Available Flights:\n");
+                do {
+                    String flightInfo = "Flight ID: " + resultSet.getInt("flight_id") + ", Departure: " + resultSet.getString("departure_city") + ", Destination: " + resultSet.getString("destination_city") + ", Date: " + resultSet.getString("travel_date") + ", Available Seats: " + resultSet.getInt("available_seats");
+                    resultArea.append(flightInfo + "\n");
+                } while (resultSet.next());
+            } else {
+                resultArea.append("No flights available for the given parameters.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
+

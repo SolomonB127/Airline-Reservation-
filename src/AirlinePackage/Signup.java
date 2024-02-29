@@ -41,6 +41,14 @@ public class Signup extends JFrame implements ActionListener  {
         imgLabel.setIcon(img);
         add(imgLabel);
 
+        //        motto msg
+        JLabel mottoLabel = new JLabel("Fly with us, soar with confidence....");
+        mottoLabel.setFont(new Font("Sans-serif", Font.ITALIC, 9));
+        mottoLabel.setHorizontalAlignment(JLabel.CENTER);
+        mottoLabel.setSize(300, 20);
+        mottoLabel.setLocation(110, 250);
+        add(mottoLabel);
+
         Font fnt = new Font("Garamond", Font.BOLD, 12);
 
         txt1 = new JTextField(50);

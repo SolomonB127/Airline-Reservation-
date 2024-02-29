@@ -40,6 +40,14 @@ public class Login  extends JFrame{
         imgLabel.setIcon(img);
         add(imgLabel);
 
+        //        motto msg
+        JLabel mottoLabel = new JLabel("Fly with us, soar with confidence....");
+        mottoLabel.setFont(new Font("Sans-serif", Font.ITALIC, 9));
+        mottoLabel.setHorizontalAlignment(JLabel.CENTER);
+        mottoLabel.setSize(300, 20);
+        mottoLabel.setLocation(110, 270);
+        add(mottoLabel);
+
         Font fnt = new Font("Garamond", Font.BOLD, 12);
 
 //        textFields
