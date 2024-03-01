@@ -44,6 +44,14 @@ public class Home extends JFrame{
         imgLabel.setIcon(img);
         add(imgLabel);
 
+        //        motto msg
+        JLabel mottoLabel = new JLabel("Fly with us, soar with confidence....");
+        mottoLabel.setFont(new Font("Sans-serif", Font.ITALIC, 9));
+        mottoLabel.setHorizontalAlignment(JLabel.CENTER);
+        mottoLabel.setSize(300, 20);
+        mottoLabel.setLocation(110, 270);
+        add(mottoLabel);
+
 
         //        Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
@@ -65,13 +73,6 @@ public class Home extends JFrame{
         welcomeLabel.setLocation(100, 250);
         add(welcomeLabel);
 
-        //        motto msg
-        JLabel mottoLabel = new JLabel("Fly with us, soar with confidence....");
-        mottoLabel.setFont(new Font("Sans-serif", Font.ITALIC, 9));
-        mottoLabel.setHorizontalAlignment(JLabel.CENTER);
-        mottoLabel.setSize(300, 20);
-        mottoLabel.setLocation(110, 270);
-        add(mottoLabel);
         Font fnt = new Font("Garamond", Font.BOLD, 12);
 
         txt1 = new JTextField(50);
@@ -224,6 +225,8 @@ public class Home extends JFrame{
                     connection.close();
 
                     JOptionPane.showMessageDialog(null, "Flight booked successfully for " + name + " on " + airline + " from " + departure + " to " + destination + " on " + date + " for " + seats + " passengers.");
+                    dispose();
+                    new Booked(username);
                 } catch (ClassNotFoundException | SQLException ex) {
                     ex.printStackTrace();
                 }

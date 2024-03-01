@@ -166,7 +166,4 @@ public class Login  extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-
-
 }
