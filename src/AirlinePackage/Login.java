@@ -121,7 +121,7 @@ public class Login  extends JFrame{
                             // User found
                             JOptionPane.showMessageDialog(null, "Successfully logged in");
                             dispose();
-//                            new Home(Username);
+                            new Home(Username);
                         } else {
                             // User not found
                             JOptionPane.showMessageDialog(null, "Invalid credentials. Please try again.");
