@@ -16,13 +16,11 @@ public class Booked extends JFrame{
     JTextField txt1;
     private JTable bookedFlightsTable;
     private JScrollPane scrollPane;
-    JPasswordField txt2;
-    JCheckBox showPsw;
-    Connection conn;
-    Statement st;
+    String username;
 
     //    login constructor method
     public Booked(String username) {
+        this.username = username;
         //        Production of frame
         setUndecorated(true);
         setLayout(null);
@@ -103,13 +101,27 @@ public class Booked extends JFrame{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Establish a connection
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/AirlineApp", "root", "");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost: 3306/AirlineApp", "root", "");
 
             // Create a statement
             Statement st = connection.createStatement();
 
-            // Execute a query to retrieve booked flights
-            ResultSet resultSet = st.executeQuery("SELECT * FROM bookings");
+            // Execute a query to retrieve booked flights for the specific user
+//         ResultSet resultSet = st.executeQuery("SELECT * FROM bookings");
+            PreparedStatement ps = connection.prepareStatement(
+                    "SELECT * FROM bookings WHERE username = ?"
+            );
+            ps.setString(1, this.username);
+            ResultSet resultSet = ps.executeQuery();
+//            PreparedStatement ps = connection.prepareStatement(
+//                    "SELECT b.*, u.Firstname " +
+//                            "FROM bookings b " +
+//                            "JOIN users u ON b.username = u.username " +
+//                            "WHERE b.username = ?"
+//            );
+//            ps.setString(1, this.username);
+
+//            ResultSet resultSet = st.executeQuery();
 
             // Create a table model to hold the data
             DefaultTableModel tableModel = new DefaultTableModel();
@@ -122,14 +134,14 @@ public class Booked extends JFrame{
 
             // Add booked flights to the table model
             while (resultSet.next()) {
-                String passengerName = resultSet.getString("Firstname");
-                String airline = resultSet.getString("airline");
-                String departure = resultSet.getString("departure");
-                String destination = resultSet.getString("destination");
-                String travelDate = resultSet.getString("travelDate");
-                int seats = resultSet.getInt("seats");
-
-                tableModel.addRow(new Object[]{passengerName, airline, departure, destination, travelDate, seats});
+                    String passengerName = resultSet.getString("username");
+                    String airline = resultSet.getString("airline");
+                    String departure = resultSet.getString("departure");
+                    String destination = resultSet.getString("destination");
+                    String travelDate = resultSet.getString("travelDate");
+                    String seats = resultSet.getString("seats");
+//                System.out.println("Booking: " + passengerName );
+                    tableModel.addRow(new Object[]{passengerName, airline, departure, destination, travelDate, seats});
             }
 
             // Set the table model to the JTable
@@ -142,7 +154,7 @@ public class Booked extends JFrame{
         }
     }
 
-    public static void main(String[] args){
-        new Booked("Mike");
-    }
+//    public static void main(String[] args){
+//        new Booked("Mike");
+//    }
 }

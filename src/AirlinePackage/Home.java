@@ -79,7 +79,7 @@ public class Home extends JFrame{
         txt1.setFont(fnt);
         txt1.setBounds(180, 353, 125, 20);
 
-        JLabel label1 = new JLabel("Passenger Name: "); // Adding label to panel
+        JLabel label1 = new JLabel("Username: "); // Adding label to panel
         Font font = new Font("Sans-serif", Font.BOLD, 14);
         label1.setFont(font);
         label1.setHorizontalAlignment(JLabel.CENTER);
@@ -138,7 +138,7 @@ public class Home extends JFrame{
         seatsSpinner.setFont(fnt);
         seatsSpinner.setBounds(180, 550, 125, 20);
 
-        JLabel label6 = new JLabel("Available Seats: "); // Adding label to panel
+        JLabel label6 = new JLabel("Booked Seats: "); // Adding label to panel
         label6.setFont(font);
         label6.setHorizontalAlignment(JLabel.CENTER);
         label6.setSize(200, 20);
@@ -163,7 +163,7 @@ public class Home extends JFrame{
 
                 // Check if first name exists in the database
                 try {
-                    PreparedStatement stmt = connection.prepareStatement("SELECT Firstname FROM users WHERE Firstname = ?");
+                    PreparedStatement stmt = connection.prepareStatement("SELECT username FROM users WHERE username = ?");
                     stmt.setString(1, name);
                     ResultSet resultSet = stmt.executeQuery();
                     if (!resultSet.next()) {
@@ -211,7 +211,7 @@ public class Home extends JFrame{
                     Statement st = connection.createStatement();
 
                     // Execute a query to store the booking details
-                    String query = "INSERT INTO bookings (Firstname, airline, departure, destination, travelDate, seats) VALUES (?, ?, ?, ?, ?, ?)";
+                    String query = "INSERT INTO bookings (username, airline, departure, destination, travelDate, seats) VALUES (?, ?, ?, ?, ?, ?)";
                     PreparedStatement pstmt = connection.prepareStatement(query);
                     pstmt.setString(1, name);
                     pstmt.setString(2, airline);
@@ -221,10 +221,15 @@ public class Home extends JFrame{
                     pstmt.setInt(6, seats);
                     pstmt.executeUpdate();
 
+//                    Create Receipt
+                    String receipt = generateReceipt(name, airline, departure, destination, date, seats);
+
                     // Close the connection
                     connection.close();
 
-                    JOptionPane.showMessageDialog(null, "Flight booked successfully for " + name + " on " + airline + " from " + departure + " to " + destination + " on " + date + " for " + seats + " passengers.");
+                    // Show receipt in a dialog
+                    JOptionPane.showMessageDialog(null, receipt, "Booking Confirmation", JOptionPane.INFORMATION_MESSAGE);
+
                     dispose();
                     new Booked(username);
                 } catch (ClassNotFoundException | SQLException ex) {
@@ -259,6 +264,30 @@ public class Home extends JFrame{
         populateComboBoxes();
     }
 
+//    Receipt method
+private String generateReceipt(String name, String airline, String departure, String destination, String date, int seats) {
+    StringBuilder receipt = new StringBuilder();
+    receipt.append("Airline Booking Confirmation\n");
+    receipt.append("---------------------------\n");
+    receipt.append("Passenger: ").append(name).append("\n");
+    receipt.append("Airline: ").append(airline).append("\n");
+    receipt.append("Departure City: ").append(departure).append("\n");
+    receipt.append("Destination City: ").append(destination).append("\n");
+    receipt.append("Travel Date: ").append(date).append("\n");
+    receipt.append("Number of Seats: ").append(seats).append("\n");
+    receipt.append("Total Price: $").append(calculateTotalPrice(seats)); // Add price calculation
+
+    return receipt.toString();
+}
+
+    // This method is for demonstration purposes only.
+// You'll need to implement your own logic to calculate the price based on your system.
+    private double calculateTotalPrice(int seats) {
+        // Replace with your logic to calculate price based on seats and other factors
+        double basePrice = 100; // Placeholder base price
+        return basePrice * seats;
+    }
+
     // Update populateComboBoxes method to populate combo boxes with available options
     private void populateComboBoxes() {
         try {
@@ -269,7 +298,7 @@ public class Home extends JFrame{
             connection = DriverManager.getConnection("jdbc:mysql://localhost/AirlineApp", "root", "");
 
             // Create a statement
-            Statement st = connection.createStatement();
+             st = connection.createStatement();
 
             // Execute a query to get airlines
             ResultSet resultSet = st.executeQuery("SELECT DISTINCT airline FROM flights");
