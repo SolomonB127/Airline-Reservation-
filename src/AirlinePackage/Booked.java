@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.print.Book;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -14,7 +15,7 @@ import java.sql.*;
 
 public class Booked extends JFrame{
     //    global variables declaration
-    JButton loginbtn;
+    JButton clearFlightbtn;
     JTextField txt1;
     private JTable bookedFlightsTable;
     private JScrollPane scrollPane;
@@ -60,11 +61,35 @@ public class Booked extends JFrame{
         userLabel.setLocation(150, 270); // Adjust location as needed
         add(userLabel);
 
+        // Cancel Label
+        JLabel cancelLabel = new JLabel("Click on airline of choice under 'Airline' column to cancel flight.");
+        cancelLabel.setFont(new Font("Sans-serif", Font.ITALIC, 12));
+        cancelLabel.setSize(400, 20);
+        cancelLabel.setLocation(100, 300); // Adjust location as needed
+        add(cancelLabel);
+
         // Initialize components
         bookedFlightsTable = new JTable();
         scrollPane = new JScrollPane(bookedFlightsTable);
-        scrollPane.setBounds(50,300,400,300);
+        scrollPane.setBounds(50,330,400,300);
         add(scrollPane);
+
+//        Clear all flights
+        clearFlightbtn = new JButton("Clear all Flights"); // Initialize bookbtn
+        clearFlightbtn.setBounds(350, 650, 130, 30);
+        Font bkfnt = new Font("Comic Sans MS", Font.BOLD, 12);
+        clearFlightbtn.setFont(bkfnt);
+        clearFlightbtn.setBackground(Color.BLUE);
+        clearFlightbtn.setForeground(Color.WHITE);
+        add(clearFlightbtn);
+        clearFlightbtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to clear all flights?", "Confirm Clear", JOptionPane.YES_NO_OPTION);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                    clearAllFlights();
+                }
+            }
+        });
 
         //        Back button
         JButton backBtn = new JButton("Back to Home");
@@ -95,6 +120,21 @@ public class Booked extends JFrame{
 
         // Populate the table with booked flights
         populateBookedFlightsTable();
+    }
+
+    // Method to clear all flights for the current user
+    private void clearAllFlights() {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AirlineApp", "root", "")) {
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM bookings WHERE username = ?");
+            ps.setString(1, username);
+            ps.executeUpdate();
+
+            // Clear the table in the UI
+            DefaultTableModel tableModel = (DefaultTableModel) bookedFlightsTable.getModel();
+            tableModel.setRowCount(0);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     // Define a method to handle flight cancellation
@@ -169,9 +209,4 @@ public class Booked extends JFrame{
             e.printStackTrace();
         }
     }
-
-
-//    public static void main(String[] args){
-//        new Booked("Mike");
-//    }
 }

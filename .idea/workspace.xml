@@ -7,7 +7,6 @@
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1709651406286</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added a cancelFlight method in Booked.java so user will be able to cancel flight of choice">
+      <option name="closed" value="true" />
+      <created>1709906804459</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1709906804459</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added an exit button as well as it's functionality(when clicked it closes the frame)." />
     <MESSAGE value="Created" />
     <MESSAGE value="Created and added a login button to the frame" />
     <MESSAGE value="Added project logo to Login page/frame" />
@@ -383,6 +389,7 @@
     <MESSAGE value="Successfully finished Home(Bookings page)" />
     <MESSAGE value="Added a Booked pag, whch consists of flights booked by current logged-in user" />
     <MESSAGE value="Generated receipt after booking in Home page, and in Bookings page displayed the list of bookings of the  user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Generated receipt after booking in Home page, and in Bookings page displayed the list of bookings of the  user." />
+    <MESSAGE value="Added a cancelFlight method in Booked.java so user will be able to cancel flight of choice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a cancelFlight method in Booked.java so user will be able to cancel flight of choice" />
   </component>
 </project>
