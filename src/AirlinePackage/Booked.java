@@ -5,6 +5,8 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -95,6 +97,18 @@ public class Booked extends JFrame{
         populateBookedFlightsTable();
     }
 
+    // Define a method to handle flight cancellation
+    private void cancelFlight(String airline) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/AirlineApp", "root", "")) {
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM bookings WHERE username = ? AND airline = ?");
+            ps.setString(1, username);
+            ps.setString(2, airline);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     private void populateBookedFlightsTable() {
         try {
             // Load the JDBC driver
@@ -107,21 +121,9 @@ public class Booked extends JFrame{
             Statement st = connection.createStatement();
 
             // Execute a query to retrieve booked flights for the specific user
-//         ResultSet resultSet = st.executeQuery("SELECT * FROM bookings");
-            PreparedStatement ps = connection.prepareStatement(
-                    "SELECT * FROM bookings WHERE username = ?"
-            );
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM bookings WHERE username = ?");
             ps.setString(1, this.username);
             ResultSet resultSet = ps.executeQuery();
-//            PreparedStatement ps = connection.prepareStatement(
-//                    "SELECT b.*, u.Firstname " +
-//                            "FROM bookings b " +
-//                            "JOIN users u ON b.username = u.username " +
-//                            "WHERE b.username = ?"
-//            );
-//            ps.setString(1, this.username);
-
-//            ResultSet resultSet = st.executeQuery();
 
             // Create a table model to hold the data
             DefaultTableModel tableModel = new DefaultTableModel();
@@ -134,25 +136,40 @@ public class Booked extends JFrame{
 
             // Add booked flights to the table model
             while (resultSet.next()) {
-                    String passengerName = resultSet.getString("username");
-                    String airline = resultSet.getString("airline");
-                    String departure = resultSet.getString("departure");
-                    String destination = resultSet.getString("destination");
-                    String travelDate = resultSet.getString("travelDate");
-                    String seats = resultSet.getString("seats");
-//                System.out.println("Booking: " + passengerName );
-                    tableModel.addRow(new Object[]{passengerName, airline, departure, destination, travelDate, seats});
+                String passengerName = resultSet.getString("username");
+                String airline = resultSet.getString("airline");
+                String departure = resultSet.getString("departure");
+                String destination = resultSet.getString("destination");
+                String travelDate = resultSet.getString("travelDate");
+                String seats = resultSet.getString("seats");
+                tableModel.addRow(new Object[]{passengerName, airline, departure, destination, travelDate, seats});
             }
 
             // Set the table model to the JTable
             bookedFlightsTable.setModel(tableModel);
 
-            // Close the connection
-            connection.close();
+            // Add a MouseListener to the JTable
+            bookedFlightsTable.addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    int row = bookedFlightsTable.rowAtPoint(e.getPoint());
+                    int col = bookedFlightsTable.columnAtPoint(e.getPoint());
+                    if (col == 1) { // Assuming the Airline column is at index 1
+                        String airline = (String)tableModel.getValueAt(row, col);
+                        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to cancel the flight with " + airline + "?", "Warning", JOptionPane.YES_NO_OPTION);
+                        if(dialogResult == JOptionPane.YES_OPTION){
+                            // User clicked yes, perform the deletion
+                            cancelFlight(airline);
+                            // Remove the row from the table model
+                            tableModel.removeRow(row);
+                        }
+                    }
+                }
+            });
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
+
 
 //    public static void main(String[] args){
 //        new Booked("Mike");

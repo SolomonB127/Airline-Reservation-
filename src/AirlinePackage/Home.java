@@ -182,14 +182,14 @@ public class Home extends JFrame{
 
                 // Check if the selected flight has available seats
                 try {
-                    PreparedStatement stmt = connection.prepareStatement("SELECT available_seats FROM flights WHERE airline = ? AND departure_city = ? AND destination_city = ? AND date_of_travel = ?");
+                    PreparedStatement stmt = connection.prepareStatement("SELECT booked_seats FROM flights WHERE airline = ? AND departure_city = ? AND destination_city = ? AND date_of_travel = ?");
                     stmt.setString(1, airline);
                     stmt.setString(2, departure);
                     stmt.setString(3, destination);
                     stmt.setString(4, date);
                     ResultSet resultSet = stmt.executeQuery();
                     if (resultSet.next()) {
-                        int availableSeats = resultSet.getInt("seats");
+                        int availableSeats = resultSet.getInt("booked_seats");
                         if (availableSeats == 0) {
                             JOptionPane.showMessageDialog(null, "Sorry, no available seats for the selected flight.");
                             return;
@@ -274,7 +274,7 @@ private String generateReceipt(String name, String airline, String departure, St
     receipt.append("Departure City: ").append(departure).append("\n");
     receipt.append("Destination City: ").append(destination).append("\n");
     receipt.append("Travel Date: ").append(date).append("\n");
-    receipt.append("Number of Seats: ").append(seats).append("\n");
+    receipt.append("Booked Seats: ").append(seats).append("\n");
     receipt.append("Total Price: $").append(calculateTotalPrice(seats)); // Add price calculation
 
     return receipt.toString();
