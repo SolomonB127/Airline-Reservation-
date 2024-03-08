@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Login.java" afterDir="false" />
-    </list>
+    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -369,11 +366,18 @@
       <option name="project" value="LOCAL" />
       <updated>1709908880644</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not.">
+      <option name="closed" value="true" />
+      <created>1709909647714</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1709909647714</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created and added a login button to the frame" />
     <MESSAGE value="Added project logo to Login page/frame" />
     <MESSAGE value="Added labels for Email and Password in Login frame" />
     <MESSAGE value="Added corresponding text-fields to labels in Login frame" />
@@ -398,6 +402,7 @@
     <MESSAGE value="Generated receipt after booking in Home page, and in Bookings page displayed the list of bookings of the  user." />
     <MESSAGE value="Added a cancelFlight method in Booked.java so user will be able to cancel flight of choice" />
     <MESSAGE value="Created a button abd added it to the frame. The button consists of a clearAllFlights method which when clicked will clear of users flight." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a button abd added it to the frame. The button consists of a clearAllFlights method which when clicked will clear of users flight." />
+    <MESSAGE value="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not." />
   </component>
 </project>

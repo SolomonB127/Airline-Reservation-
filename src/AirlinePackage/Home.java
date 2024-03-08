@@ -4,8 +4,6 @@ package AirlinePackage;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -79,7 +77,7 @@ public class Home extends JFrame{
         txt1.setFont(fnt);
         txt1.setBounds(180, 353, 125, 20);
 
-        JLabel label1 = new JLabel("Username: "); // Adding label to panel
+        JLabel label1 = new JLabel("UserId(name): "); // Adding label to panel
         Font font = new Font("Sans-serif", Font.BOLD, 14);
         label1.setFont(font);
         label1.setHorizontalAlignment(JLabel.CENTER);
@@ -146,7 +144,7 @@ public class Home extends JFrame{
         add(label6);
         add(seatsSpinner);
 
-        bookbtn = new JButton("Book Flight"); // Initialize bookbtn
+        bookbtn = new JButton("Book Flight"); // Initialized bookbtn
         bookbtn.setBounds(100, 600, 125, 20);
         Font bkfnt = new Font("Comic Sans MS", Font.BOLD, 12);
         bookbtn.setFont(bkfnt);
@@ -161,7 +159,7 @@ public class Home extends JFrame{
                 String date = txt2.getText().toString();
                 int seats = (int) seatsSpinner.getValue();
 
-                // Check if first name exists in the database
+                // Check if user name exists in the database
                 try {
                     PreparedStatement stmt = connection.prepareStatement("SELECT username FROM users WHERE username = ?");
                     stmt.setString(1, name);
@@ -280,11 +278,9 @@ private String generateReceipt(String name, String airline, String departure, St
     return receipt.toString();
 }
 
-    // This method is for demonstration purposes only.
-// You'll need to implement your own logic to calculate the price based on your system.
+//Payment method
     private double calculateTotalPrice(int seats) {
-        // Replace with your logic to calculate price based on seats and other factors
-        double basePrice = 100; // Placeholder base price
+        double basePrice = 100;
         return basePrice * seats;
     }
 
