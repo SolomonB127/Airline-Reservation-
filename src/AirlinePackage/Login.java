@@ -119,9 +119,21 @@ public class Login  extends JFrame{
 
                         if (rs.next()) {
                             // User found
-                            JOptionPane.showMessageDialog(null, "Successfully logged in");
-                            dispose();
-                            new Home(Username);
+                            JOptionPane.showMessageDialog(null, "Successfully logged in"); // Show the success message
+                            // Check if the user has any bookings
+                            PreparedStatement ps = conn.prepareStatement("SELECT * FROM bookings WHERE username = ?");
+                            ps.setString(1, Username);
+                            ResultSet bookingsResultSet = ps.executeQuery();
+
+                            if (bookingsResultSet.next()) {
+                                // User has bookings, redirect to Booked page
+                                dispose();
+                                new Booked(Username);
+                            } else {
+                                // User has no bookings, redirect to Home page
+                                dispose();
+                                new Home(Username);
+                            }
                         } else {
                             // User not found
                             JOptionPane.showMessageDialog(null, "Invalid credentials. Please try again.");
