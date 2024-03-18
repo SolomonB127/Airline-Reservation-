@@ -4,6 +4,8 @@ package AirlinePackage;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -11,6 +13,7 @@ import java.sql.*;
 
 public class Login  extends JFrame{
 //    global variables declaration
+    JLabel label3;
     JButton loginbtn;
     JTextField txt1;
     JPasswordField txt2;
@@ -38,6 +41,7 @@ public class Login  extends JFrame{
         imgLabel.setHorizontalAlignment(JLabel.CENTER);
         imgLabel.setVerticalAlignment(JLabel.TOP);
         imgLabel.setIcon(img);
+        setIconImage(img.getImage());
         add(imgLabel);
 
         //        motto msg
@@ -91,6 +95,19 @@ public class Login  extends JFrame{
         add(label2);
         add(txt2);
         add(showPsw);
+
+        this.label3 = new JLabel("Forgot Password ? Click Here ");
+        this.label3.setFont(font);
+        this.label3.setHorizontalAlignment(0);
+        this.label3.setSize(400, 20);
+        this.label3.setLocation(50, 650);
+        this.label3.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                Login.this.dispose();
+                new RetrievePassword();
+            }
+        });
+        this.add(this.label3);
         
 //     login button   
         loginbtn = new JButton("Log-in");
@@ -167,6 +184,23 @@ public class Login  extends JFrame{
         this.add(closeBtn);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //        Back  button
+        JButton backBtn = new JButton("Back");
+        backBtn.setSize(80, 30);
+        backBtn.setLocation(25, 70);
+        Font bkfnt = new Font("Comic Sans MS", Font.BOLD, 13);
+        backBtn.setFont(bkfnt);
+        backBtn.setBackground(Color.BLUE);
+        backBtn.setForeground(Color.WHITE);
+        backBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Signup();
+            }
+        });
+        this.add(backBtn);
+
 
         //        Jlabel for frame
         JLabel imglabel = new JLabel(new ImageIcon(image));
@@ -178,4 +212,6 @@ public class Login  extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
+
 }

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="" />
+    <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,15 +34,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/cex/Desktop/TRIALS/PERSONAL/Airline Reservation/Airline Project/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/cex/Desktop/LESSONS/Airline Reservation",
+    "onboarding.tips.debug.path": "C:/Users/cex/Desktop/TRIALS/PERSONAL/Airline Reservation/Airline Project/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -374,11 +381,18 @@
       <option name="project" value="LOCAL" />
       <updated>1709909647714</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Did code clean-up in necessary pages">
+      <option name="closed" value="true" />
+      <created>1709909914189</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1709909914189</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added project logo to Login page/frame" />
     <MESSAGE value="Added labels for Email and Password in Login frame" />
     <MESSAGE value="Added corresponding text-fields to labels in Login frame" />
     <MESSAGE value="Added a show password functionality in Login frame" />
@@ -403,6 +417,7 @@
     <MESSAGE value="Added a cancelFlight method in Booked.java so user will be able to cancel flight of choice" />
     <MESSAGE value="Created a button abd added it to the frame. The button consists of a clearAllFlights method which when clicked will clear of users flight." />
     <MESSAGE value="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not." />
+    <MESSAGE value="Did code clean-up in necessary pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did code clean-up in necessary pages" />
   </component>
 </project>
