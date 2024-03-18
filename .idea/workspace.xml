@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8247255-e81c-4ec9-96bf-908a20cf07ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Booked.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirlinePackage/Signup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -389,13 +389,34 @@
       <option name="project" value="LOCAL" />
       <updated>1709909914189</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Added a back to Signup button and a &quot;Forgot password functionality&quot;.">
+      <option name="closed" value="true" />
+      <created>1710764608567</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1710764608567</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added a &quot;view flight&quot; button.">
+      <option name="closed" value="true" />
+      <created>1710764753541</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1710764753541</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Added a file &quot;A retrievePassword&quot; file">
+      <option name="closed" value="true" />
+      <created>1710764845374</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1710764845374</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added labels for Email and Password in Login frame" />
-    <MESSAGE value="Added corresponding text-fields to labels in Login frame" />
-    <MESSAGE value="Added a show password functionality in Login frame" />
     <MESSAGE value="Refactored code that inputs values in SQL server in Signup frame" />
     <MESSAGE value="Refactored code in Signup and Login frame" />
     <MESSAGE value="Added a username label and text field in Signup frame" />
@@ -418,6 +439,9 @@
     <MESSAGE value="Created a button abd added it to the frame. The button consists of a clearAllFlights method which when clicked will clear of users flight." />
     <MESSAGE value="Modified the login button to redirect user to either Home or Booked page depending on whether the user has bookings or not." />
     <MESSAGE value="Did code clean-up in necessary pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did code clean-up in necessary pages" />
+    <MESSAGE value="Added a back to Signup button and a &quot;Forgot password functionality&quot;." />
+    <MESSAGE value="Added a &quot;view flight&quot; button." />
+    <MESSAGE value="Added a file &quot;A retrievePassword&quot; file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a file &quot;A retrievePassword&quot; file" />
   </component>
 </project>

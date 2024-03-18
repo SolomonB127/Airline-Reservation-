@@ -2,10 +2,7 @@ package AirlinePackage;
 
 //Importation of utilities
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
@@ -51,31 +48,148 @@ public class Signup extends JFrame implements ActionListener  {
         add(mottoLabel);
 
         Font fnt = new Font("Garamond", Font.BOLD, 12);
+        // Placeholder text color
+        Color placeholderColor = Color.GRAY;
 
         txt1 = new JTextField(50);
         txt1.setFont(fnt);
         txt1.setBounds(200, 303, 150, 20);
+        txt1.setForeground(placeholderColor);
+        txt1.setText("John");
+        txt1.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt1.getText().equals("John")) {
+                    txt1.setText("");
+                    txt1.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt1.getText().isEmpty()) {
+                    txt1.setForeground(placeholderColor);
+                    txt1.setText("John");
+                }
+            }
+        });
 
 
         txt2 = new JTextField(50);
         txt2.setFont(fnt);
         txt2.setBounds(200, 350, 150, 20);
+        txt2.setForeground(placeholderColor);
+        txt2.setText("Doe");
+        txt2.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt2.getText().equals("Doe")) {
+                    txt2.setText("");
+                    txt2.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt2.getText().isEmpty()) {
+                    txt2.setForeground(placeholderColor);
+                    txt2.setText("Doe");
+                }
+            }
+        });
 
         txt3 = new JTextField(50);
         txt3.setFont(fnt);
         txt3.setBounds(200, 450, 150, 20);
+        txt3.setForeground(placeholderColor);
+        txt3.setText("John@mail.com");
+        txt3.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt3.getText().equals("John@mail.com")) {
+                    txt3.setText("");
+                    txt3.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt3.getText().isEmpty()) {
+                    txt3.setForeground(placeholderColor);
+                    txt3.setText("John@mail.com");
+                }
+            }
+        });
 
         txt4 = new JTextField(50);
         txt4.setFont(fnt);
         txt4.setBounds(200, 500, 150, 20);
+        txt4.setForeground(placeholderColor);
+        txt4.setText("+234 00-000-000");
+        txt4.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt4.getText().equals("+234 00-000-000")) {
+                    txt4.setText("");
+                    txt4.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt4.getText().isEmpty()) {
+                    txt4.setForeground(placeholderColor);
+                    txt4.setText("+234 00-000-000");
+                }
+            }
+        });
+
 
         txt5 = new JTextField(50);
         txt5.setFont(fnt);
         txt5.setBounds(200, 400, 150, 20);
+        txt5.setForeground(placeholderColor);
+        txt5.setText("John123");
+        txt5.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt5.getText().equals("John123")) {
+                    txt5.setText("");
+                    txt5.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt5.getText().isEmpty()) {
+                    txt5.setForeground(placeholderColor);
+                    txt5.setText("John123");
+                }
+            }
+        });
 
         txt6 = new JPasswordField(50);
         txt6.setFont(fnt);
         txt6.setBounds(200, 550, 150, 20);
+        txt6.setForeground(placeholderColor);
+        txt6.setText("*******");
+        txt6.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt6.getText().equals("*******")) {
+                    txt6.setText("");
+                    txt6.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt6.getText().isEmpty()) {
+                    txt6.setForeground(placeholderColor);
+                    txt6.setText("*******");
+                }
+            }
+        });
         showPsw = new JCheckBox("Show Password");
         showPsw.setBounds(200, 575, 150, 20);
         showPsw.addActionListener(new ActionListener() {
