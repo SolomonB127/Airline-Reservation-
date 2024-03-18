@@ -39,6 +39,7 @@ public class Signup extends JFrame implements ActionListener  {
         imgLabel.setHorizontalAlignment(JLabel.CENTER);
         imgLabel.setVerticalAlignment(JLabel.TOP);
         imgLabel.setIcon(img);
+        setIconImage(img.getImage());
         add(imgLabel);
 
         //        motto msg

@@ -11,7 +11,7 @@ import java.sql.*;
 
 public class Home extends JFrame{
     //    global variables declaration
-    JButton bookbtn;
+    JButton bookbtn, viewFlightBtn;
     JTextField txt1,txt2;
     private JComboBox<String> airlineBox, departureBox, destinationBox;
     private JSpinner seatsSpinner;
@@ -40,6 +40,7 @@ public class Home extends JFrame{
         imgLabel.setHorizontalAlignment(JLabel.CENTER);
         imgLabel.setVerticalAlignment(JLabel.TOP);
         imgLabel.setIcon(img);
+        setIconImage(img.getImage());
         add(imgLabel);
 
         //        motto msg
@@ -144,9 +145,21 @@ public class Home extends JFrame{
         add(label6);
         add(seatsSpinner);
 
-        bookbtn = new JButton("Book Flight"); // Initialized bookbtn
-        bookbtn.setBounds(100, 600, 125, 20);
         Font bkfnt = new Font("Comic Sans MS", Font.BOLD, 12);
+        this.viewFlightBtn = new JButton("View Flights");
+        this.viewFlightBtn.setBounds(300, 600, 125, 30);
+        this.viewFlightBtn.setFont(bkfnt);
+        this.viewFlightBtn.setBackground(Color.BLUE);
+        this.viewFlightBtn.setForeground(Color.WHITE);
+        this.viewFlightBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Home.this.dispose();
+                new Booked(username);
+            }
+        });
+        add(viewFlightBtn);
+        bookbtn = new JButton("Book Flight"); // Initialized bookbtn
+        bookbtn.setBounds(100, 600, 125, 30);
         bookbtn.setFont(bkfnt);
         bookbtn.setBackground(Color.BLUE);
         bookbtn.setForeground(Color.WHITE);
@@ -277,7 +290,6 @@ private String generateReceipt(String name, String airline, String departure, St
 
     return receipt.toString();
 }
-
 //Payment method
     private double calculateTotalPrice(int seats) {
         double basePrice = 100;

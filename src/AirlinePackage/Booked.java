@@ -41,6 +41,7 @@ public class Booked extends JFrame{
         imgLabel.setHorizontalAlignment(JLabel.CENTER);
         imgLabel.setVerticalAlignment(JLabel.TOP);
         imgLabel.setIcon(img);
+        setIconImage(img.getImage());
         add(imgLabel);
 
         //        motto msg
@@ -192,7 +193,7 @@ public class Booked extends JFrame{
                 public void mouseClicked(MouseEvent e) {
                     int row = bookedFlightsTable.rowAtPoint(e.getPoint());
                     int col = bookedFlightsTable.columnAtPoint(e.getPoint());
-                    if (col == 1) { // Assuming the Airline column is at index 1
+                    if (col == 1) {
                         String airline = (String)tableModel.getValueAt(row, col);
                         int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to cancel the flight with " + airline + "?", "Warning", JOptionPane.YES_NO_OPTION);
                         if(dialogResult == JOptionPane.YES_OPTION){
