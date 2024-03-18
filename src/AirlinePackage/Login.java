@@ -117,6 +117,7 @@ public class Login  extends JFrame{
         loginbtn.setFont(logfnt);
         loginbtn.setBackground(Color.BLUE);
         loginbtn.setForeground(Color.WHITE);
+        loginbtn.setFocusPainted(false);
         loginbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -175,6 +176,7 @@ public class Login  extends JFrame{
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
         closeBtn.setForeground(Color.WHITE);
+        closeBtn.setFocusPainted(false);
         closeBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -192,6 +194,7 @@ public class Login  extends JFrame{
         backBtn.setFont(bkfnt);
         backBtn.setBackground(Color.BLUE);
         backBtn.setForeground(Color.WHITE);
+        backBtn.setFocusPainted(false);
         backBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

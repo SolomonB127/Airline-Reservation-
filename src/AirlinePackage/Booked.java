@@ -81,6 +81,7 @@ public class Booked extends JFrame{
         clearFlightbtn.setFont(bkfnt);
         clearFlightbtn.setBackground(Color.BLUE);
         clearFlightbtn.setForeground(Color.WHITE);
+        clearFlightbtn.setFocusPainted(false);
         add(clearFlightbtn);
         clearFlightbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -99,6 +100,7 @@ public class Booked extends JFrame{
         backBtn.setFont(clfnt);
         backBtn.setBackground(Color.BLUE);
         backBtn.setForeground(Color.WHITE);
+        backBtn.setFocusPainted(false);
         backBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

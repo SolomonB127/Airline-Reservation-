@@ -151,6 +151,7 @@ public class Home extends JFrame{
         this.viewFlightBtn.setFont(bkfnt);
         this.viewFlightBtn.setBackground(Color.BLUE);
         this.viewFlightBtn.setForeground(Color.WHITE);
+        this.viewFlightBtn.setFocusPainted(false);
         this.viewFlightBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Home.this.dispose();
@@ -163,6 +164,7 @@ public class Home extends JFrame{
         bookbtn.setFont(bkfnt);
         bookbtn.setBackground(Color.BLUE);
         bookbtn.setForeground(Color.WHITE);
+        bookbtn.setFocusPainted(false);
         bookbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name = txt1.getText().toString();
@@ -264,6 +266,7 @@ public class Home extends JFrame{
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
         closeBtn.setForeground(Color.WHITE);
+        closeBtn.setFocusPainted(false);
         closeBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

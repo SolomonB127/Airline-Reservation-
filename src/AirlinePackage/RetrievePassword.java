@@ -53,6 +53,7 @@ public class RetrievePassword extends JFrame {
         backBtn.setFont(clfnt);
         backBtn.setBackground(Color.BLUE);
         backBtn.setForeground(Color.WHITE);
+        backBtn.setFocusPainted(false);
 
         add(backBtn);
 
@@ -131,6 +132,7 @@ public class RetrievePassword extends JFrame {
         resetBtn.setFont(logfnt);
         resetBtn.setBackground(Color.BLUE);
         resetBtn.setForeground(Color.WHITE);
+        resetBtn.setFocusPainted(false);
 
 
         resetBtn.addActionListener( new ActionListener() {

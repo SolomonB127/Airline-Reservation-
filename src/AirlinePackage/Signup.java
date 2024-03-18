@@ -269,6 +269,7 @@ public class Signup extends JFrame implements ActionListener  {
         signupbtn.setFont(signfnt);
         signupbtn.setBackground(Color.BLUE);
         signupbtn.setForeground(Color.WHITE);
+        signupbtn.setFocusPainted(false);
         add(signupbtn);
         signupbtn.addActionListener(this);
         label7.addMouseListener(new MouseAdapter() {
@@ -289,6 +290,7 @@ public class Signup extends JFrame implements ActionListener  {
         closeBtn.setFont(clfnt);
         closeBtn.setBackground(Color.BLUE);
         closeBtn.setForeground(Color.WHITE);
+        closeBtn.setFocusPainted(false);
         closeBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

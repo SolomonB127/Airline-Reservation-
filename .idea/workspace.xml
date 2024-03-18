@@ -413,11 +413,18 @@
       <option name="project" value="LOCAL" />
       <updated>1710764845374</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Created placeholder in the Signup page text-fields">
+      <option name="closed" value="true" />
+      <created>1710766001521</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1710766001521</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactored code that inputs values in SQL server in Signup frame" />
     <MESSAGE value="Refactored code in Signup and Login frame" />
     <MESSAGE value="Added a username label and text field in Signup frame" />
     <MESSAGE value="Refactored the string query in Signup frame" />
@@ -442,6 +449,7 @@
     <MESSAGE value="Added a back to Signup button and a &quot;Forgot password functionality&quot;." />
     <MESSAGE value="Added a &quot;view flight&quot; button." />
     <MESSAGE value="Added a file &quot;A retrievePassword&quot; file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a file &quot;A retrievePassword&quot; file" />
+    <MESSAGE value="Created placeholder in the Signup page text-fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created placeholder in the Signup page text-fields" />
   </component>
 </project>
